@@ -1,7 +1,9 @@
+import { Entity } from './../types/index'
 import { faker } from '@faker-js/faker'
 import { Location } from '../types'
 
-export class Destination {
+export class Destination implements Entity {
+    description: string
     receiver: string
     location: Location
 
@@ -11,5 +13,10 @@ export class Destination {
             lat: +faker.address.latitude(),
             lng: +faker.address.longitude()
         }
+        this.description = 'destination'
+    }
+
+    popupText(): string {
+        return `<h3>Receiver name:${this.receiver}</h3>`
     }
 }

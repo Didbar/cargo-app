@@ -1,6 +1,5 @@
-import { Destination, Cargo } from '../classes'
 import { icons } from '../constants/icons'
-import { Location } from '../types'
+import { Location, Entity } from '../types'
 
 export class TrackingMap {
     private _googleMap: google.maps.Map
@@ -15,7 +14,7 @@ export class TrackingMap {
         })
     }
 
-    attachMarker(entity: Destination | Cargo, type: string): void {
+    attachMarker(entity: Entity): void {
         const marker = new google.maps.Marker({
             map: this._googleMap,
             animation: google.maps.Animation.DROP,
@@ -23,12 +22,19 @@ export class TrackingMap {
                 lat: entity.location.lat,
                 lng: entity.location.lng
             },
-            icon: icons[type].icon,
-            title: type
+            icon: icons[entity.description].icon,
+            title: entity.description
         })
         marker.getTitle()
+        marker.addListener('click', () => {
+            console.log(entity.description)
+            const popup = new google.maps.InfoWindow({
+                content: entity.popupText()
+            })
+            popup.open(this._googleMap, marker)
+        })
     }
-    allLines(entities: Location[]) {
+    addDirection(entities: Location[]) {
         const flightPath = new google.maps.Polyline({
             path: entities,
             geodesic: true,
