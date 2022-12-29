@@ -9,7 +9,7 @@ export class Cargo {
         this.trackingId = faker.datatype.uuid()
         this.location = {
             lat: +faker.address.latitude(),
-            lon: +faker.address.longitude()
+            lng: +faker.address.longitude()
         }
     }
 }

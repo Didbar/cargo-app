@@ -9,7 +9,7 @@ export class Destination {
         this.receiver = faker.name.firstName()
         this.location = {
             lat: +faker.address.latitude(),
-            lon: +faker.address.longitude()
+            lng: +faker.address.longitude()
         }
     }
 }
