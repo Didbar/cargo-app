@@ -16,6 +16,7 @@
         "webpack-cli": "^5.0.1"
     },
     "dependencies": {
-        "@faker-js/faker": "^7.6.0"
+        "@faker-js/faker": "^7.6.0",
+        "@types/google.maps": "^3.51.0"
     }
 }
