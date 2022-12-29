@@ -1,4 +1,5 @@
 import { Destination, Cargo, TrackingMap } from './classes'
+import './style.css'
 
 const dest = new Destination()
 const cargo = new Cargo()
