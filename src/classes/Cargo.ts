@@ -1,4 +1,4 @@
-import { Location } from '../types/Location'
+import { Location } from '../types'
 import { faker } from '@faker-js/faker'
 
 export class Cargo {

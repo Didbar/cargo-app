@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker'
-import { Location } from '../types/Location'
+import { Location } from '../types'
 
 export class Destination {
     receiver: string
