@@ -1,9 +1,8 @@
 import { Destination, Cargo, TrackingMap } from './classes'
 
 const dest = new Destination()
-console.log(dest)
-
 const cargo = new Cargo()
-console.log(cargo)
+const map = new TrackingMap('map-container')
 
-new TrackingMap('map-container')
+map.attachMarker(dest)
+map.attachMarker(cargo)
